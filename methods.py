@@ -16,6 +16,7 @@ def eris_says(text):
 
 
 def ask(question):
+    """Ask Eris anything and she will try to answer (WIP)"""
     eris_says(f'You asked "{question}"')
 
 
@@ -49,6 +50,7 @@ def current_weather(query):
     if _res['cod'] != 200:
         eris_says('I\'m terribly sorry! It seems there was an error while I was trying to get the weather data.')
         return
+
     _sunrise = datetime.fromtimestamp(int(_res["sys"]["sunrise"])).strftime('%H:%M:%S')
     _sunset = datetime.fromtimestamp(int(_res["sys"]["sunset"])).strftime('%H:%M:%S')
     eris_says(f'Here\'s the current weather for {query}.')
